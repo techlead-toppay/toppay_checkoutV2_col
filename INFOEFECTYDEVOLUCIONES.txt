@@ -1,0 +1,22 @@
+ public llave: string = 'qcnGBZ3mntdvlw2u';
+
+  public vads:any = {
+    vads_action_mode:'INTERACTIVE',
+    vads_amount:'',
+    vads_ctx_mode:'TEST',
+    vads_currency:'170',
+    vads_cust_country:'CO',
+    vads_cust_email:'',
+    vads_cust_first_name:'',
+    vads_cust_last_name:'',
+    vads_cust_phone:'',
+    vads_page_action:'PAYMENT',
+    vads_payment_cards:'EFECTY',
+    vads_payment_config:'SINGLE',
+    vads_site_id:'57845002',
+    vads_trans_date:'',
+    vads_trans_id:'362824',
+    vads_order_id:'',
+    vads_version:'V2',
+    signature:''
+  }

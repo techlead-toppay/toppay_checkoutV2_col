@@ -1,0 +1,86 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~animate.css";
+
+:root {
+   --app-color-primary: #A028ff;
+   --app-color-secondary: #129EFF;
+}
+
+/* body {
+   background: rgb(18, 158, 255);
+   background: -moz-linear-gradient(90deg, rgba(18, 158, 255, 0.2539216370141807) 0%, rgba(160, 40, 255, 0.23991603477328427) 100%);
+   background: -webkit-linear-gradient(90deg, rgba(18, 158, 255, 0.2539216370141807) 0%, rgba(160, 40, 255, 0.23991603477328427) 100%);
+   background: linear-gradient(90deg, rgba(18, 158, 255, 0.2539216370141807) 0%, rgba(160, 40, 255, 0.23991603477328427) 100%);
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#129eff", endColorstr="#a028ff", GradientType=1);
+} */
+body {
+   font-family: 'Roboto', sans-serif;
+   background-color: #f1f1f1;
+}
+
+.form-control {
+   border-radius: .5rem;
+   background: #f8f8f8;
+   border: none;
+   box-shadow: 0 0 .3rem .1rem #00000026;
+}
+
+.card {
+   background: none;
+   border: none;
+   border-radius: 1rem;
+   box-shadow: 0 0 5px 1px #c2c2c2 !important;
+}
+
+.card-header {
+   border: none;
+   border-radius: 1rem !important;
+   background: none;
+}
+
+.card-footer {
+   border: none;
+   border-radius: 1rem !important;
+   background: none;
+}
+
+.card .card-bg {
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   filter: blur(9px);
+   background: #ffffffad;
+   opacity: 0.7;
+   z-index: -1;
+}
+
+.btn {
+   border: none;
+   font-weight: bold;
+   min-width: 7rem;
+   border-radius: 1rem;
+}
+
+.btn-primary {
+   background: var(--app-color-primary);
+}
+
+/* Alert */
+
+body.swal2-toast-shown .swal2-container {
+   margin: 0rem auto !important;
+   left: 0 !important;
+}
+
+.swal2-popup.swal2-toast {
+   border: none !important;
+   border-radius: 3rem !important;
+   box-shadow: none !important;
+}
+
+.swal2-popup.swal2-toast .swal2-icon {
+   display: none !important;
+}
+.card{
+   background-color: #ffffff;
+}

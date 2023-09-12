@@ -1,0 +1,20 @@
+<nav class="navbar navbar-light bg-light">
+   <div class="container w-100 p-0 d-block">
+      <div class="row w-100 m-0 ">
+         <div class="col-5 col-md text-start p-0">
+            <a *ngIf="dataCheckout.id" class="navbar-brand" href="#">
+               <img [src]="dataCheckout.merchant_logo" alt="" width="50" height="50">
+               <b>{{dataCheckout.merchant_name}}</b>
+            </a>
+         </div>
+         <div class="col-7 col-md text-end p-0">
+            <a class="navbar-brand logo-topup d-block m-0" href="#">
+               <span>Pagos seguros con TopPay</span>
+               <img src="assets/logo.png" width="30" height="30">
+            </a>
+         </div>
+      </div>
+   </div>
+</nav>
+<!-- <p-speedDial [model]="items" className="speeddial-left" direction="up"></p-speedDial> -->
+<router-outlet></router-outlet>

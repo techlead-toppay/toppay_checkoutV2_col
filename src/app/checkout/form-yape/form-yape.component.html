@@ -1,0 +1,24 @@
+<div class="card shadow text-center">
+    <div class="card-bg"></div>
+    <div class="card-header">
+       <!-- <back-form-main></back-form-main> -->
+       Continúa con tu compra
+    </div>
+    <div class="card-body">
+ 
+        <div id="formularioEfecty" style="text-align: center;">
+            <img class="imgQr" src="assets/qryape.png" alt="pqr">
+            <h3 class="text-primary"> DATOS &nbsp;DE &nbsp;LA &nbsp;COMPRA <br> 
+                <small class="text-dark">Monto {{infoYape.currency}} {{infoYape.amount | number}}</small>
+              </h3>
+            <br>
+            
+            <h4 class="text-success">Numero de referencia: <br>
+                <span class="text-primary">{{infoYape.id}}</span>
+            </h4>
+            <p>Fecha de Expiracion {{infoYape.expiration}}</p>
+           
+        </div>
+        
+    </div>
+ </div>

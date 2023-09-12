@@ -1,0 +1,39 @@
+<div class="container mt-5 mb-5">
+
+   <div *ngIf="checkoutService.isLoadingDetails" class="row">
+      <div class="col-12">
+         <div class="card-body">
+            <div class="d-flex justify-content-center">
+               <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div *ngIf="!checkoutService.isLoadingDetails" class="row">
+      <div class="col-12 col-md-6 mt-3 mx-auto">
+         <div class="card shadow card-details">
+            <div class="card-bg"></div>
+            <div class="card-header text-center"> RECIBO DE PAGO </div>
+            <div *ngIf="dataCheckout.reference" class="card-body animate__animated animate__fadeIn">
+
+               <div class="text-title">
+                  <p>PAGO {{ dataCheckout.status }}</p>
+               </div>
+
+               <p class="card-text"> <strong>Referencia de pago:</strong> {{dataCheckout.reference}} </p>
+               <p class="card-text"> <strong>Fecha:</strong> {{dataCheckout.date}} </p>
+
+               <p class="card-text"> <strong>Nombre:</strong> {{dataCheckout.user_name}}
+               <p class="card-text"> <strong>Email:</strong> {{dataCheckout.user_email}}
+
+            </div>
+            <div *ngIf="dataCheckout.reference" class="card-footer text-muted">
+               <strong>Total: {{dataCheckout.currency}} {{dataCheckout.amount | currency}}</strong>
+            </div>
+         </div>
+      </div>
+   </div>
+
+</div>

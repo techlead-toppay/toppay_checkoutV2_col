@@ -1,0 +1,16 @@
+nav {
+   background: none !important;
+}
+
+.logo-topup span{
+   font-size: .7rem;
+   margin-right: .5rem;
+}
+
+.text-title{
+   font-size: 1.5rem;
+}
+
+img.bank{
+   width: 50%;
+}

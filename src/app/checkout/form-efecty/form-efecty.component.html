@@ -1,0 +1,27 @@
+<div class="card shadow text-center">
+    <div class="card-bg"></div>
+    <div class="card-header">
+       <back-form-main></back-form-main>
+       Continúa con tu compra
+    </div>
+    <div class="card-body">
+ 
+        <div id="formularioEfecty" style="text-align: center;">
+            <img src="assets/efecty.png" alt="logo efecty" style="width: 150px; margin-top: 20px;">
+            <h3 class="text-primary"> DATOS &nbsp;DE &nbsp;LA &nbsp;COMPRA <br> <small class="text-dark">Monto {{infoEfecty.currency}} {{infoEfecty.amount | currency}}</small></h3>
+            <br>
+            <h3>Convenio: <span class="text-primary">113158 </span> <small>Topup Recaudo</small></h3>
+            <h3>Referencia: <span class="text-primary">{{infoEfecty.id}}</span></h3>
+
+            <img id="barcode">
+
+            <p>Fecha de Expiracion {{infoEfecty.expiration}}<br>
+                <strong>ACREDITACION &nbsp; INMEDIATA</strong>
+            </p>
+           
+        </div>
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <button type="button" class="btn btn-primary" (click)="imprimir()" style="width: 150px;">DESCARGAR</button>
+          </div>
+    </div>
+ </div>

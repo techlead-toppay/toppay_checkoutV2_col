@@ -1,0 +1,14 @@
+.icon-back button {
+   position: absolute;
+   left: 1rem;
+   background: #4a2a9a;
+   border: none;
+   border-radius: 1rem;
+   width: 3rem;
+   height: 1.9rem;
+   font-size: 1.1rem;
+}
+
+.icon-back button i {
+   color: #ffffff;
+}

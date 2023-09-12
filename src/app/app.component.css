@@ -1,0 +1,18 @@
+.logo-bg{
+   height: 100%;
+   position: fixed;
+   z-index: -1;
+   top: 3.5rem;
+   left: 10%;
+   opacity: .3;
+   /* filter: blur(5px); */
+}
+
+.video{
+   position: fixed;
+   right: 0;
+   bottom: 0;
+   min-width: 100%; 
+   min-height: 100%;
+   filter: blur(3px);
+}

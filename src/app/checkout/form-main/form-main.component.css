@@ -1,0 +1,144 @@
+.card-details .card-text {
+   margin-bottom: 0rem;
+   margin-top: 1rem;
+   /* font-size: .7rem; */
+   font-size: 18px;
+   color: #4a2a9a;
+   font-weight: bold;
+}
+
+.card-details .card-title {
+   font-size: 16px;
+   color: #3c3c3c;
+   font-weight: 400;
+}
+
+.card-details .card-footer {
+   font-size: 1.3rem;
+   color: black !important;
+}
+
+.card-header {
+   font-weight: bold;
+   color: #4a2a9a;
+   font-size: 22px;
+   text-align: center;
+}
+
+.card-header b {
+   color: #4a2a9a;
+}
+
+.custom-marker {
+   display: flex;
+   width: 45px;
+   height: 40px;
+   align-items: center;
+   justify-content: center;
+   color: #ffffff;
+   border-radius: 50%;
+   z-index: 1;
+}
+
+::ng-deep {
+
+   .p-timeline-event-content,
+   .p-timeline-event-opposite {
+      line-height: 1;
+   }
+}
+
+p-timeline {
+   width: 50% !important;
+}
+
+.nameStepmetodoPago {
+   margin-left: -50px;
+   font-size: 18px;
+   color: #4a2a9a;
+}
+
+.nameStepformulario {
+   margin-left: -30px;
+   font-size: 18px;
+   color: #4a2a9a;
+}
+
+.nameStepcomprobante {
+   margin-left: -45px;
+   font-size: 18px;
+   color: #4a2a9a;
+}
+
+.totalAmount {
+   color: #4a2a9a;
+   font-weight: bold;
+   font-size: 24px;
+}
+
+.titleTotalAmount {
+   color: #777;
+   font-weight: bold;
+   margin-right: 5px;
+   font-size: 24px;
+}
+
+@media screen and (max-width: 960px) {
+   ::ng-deep {
+      .customized-timeline {
+         .p-timeline-event:nth-child(even) {
+            flex-direction: row !important;
+
+            .p-timeline-event-content {
+               text-align: left !important;
+            }
+         }
+
+         .p-timeline-event-opposite {
+            flex: 0;
+         }
+
+         .p-card {
+            margin-top: 1rem;
+         }
+      }
+   }
+
+   p-timeline {
+      width: 80% !important;
+      margin-left: 40px;
+   }
+
+   .nameStepmetodoPago {
+      margin-left: -40px;
+      font-size: 14px;
+      color: #4a2a9a;
+   }
+
+   .nameStepformulario {
+      margin-left: -20px;
+      font-size: 14px;
+      color: #4a2a9a;
+   }
+
+   .nameStepcomprobante {
+      margin-left: -25px;
+      font-size: 14px;
+      color: #4a2a9a;
+   }
+
+   .class-metodoPago {
+      width: 50px;
+      height: 35px;
+   }
+
+   .class-formulario {
+      width: 50px;
+      height: 35px;
+   }
+
+   .class-comprobante {
+      width: 35px;
+      height: 35px;
+   }
+}

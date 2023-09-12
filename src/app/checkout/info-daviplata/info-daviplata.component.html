@@ -1,0 +1,44 @@
+<div class="container">
+   <div class="row">
+      <div class="col-12 col-md-6 mx-auto">
+
+         <div class="card shadow text-center">
+            <div class="card-bg"></div>
+            <div class="card-header">
+               <back-form-main></back-form-main>
+               PAGO DAVIPLATA
+            </div>
+            <div class="card-body">
+
+               <img src="assets/daviplata.png" class="icon-daviplata">
+
+               <div *ngIf="dataCheckout.reference" class="card-body animate__animated animate__fadeIn">
+
+                  <div class="text-title">
+                     <p>PAGO {{ dataCheckout.status }}</p>
+                  </div>
+
+                  <p class="card-text"> <strong>Referencia de pago:</strong> {{dataCheckout.reference}} </p>
+                  <p class="card-text"> <strong>Fecha:</strong> {{dataCheckout.date}} </p>
+
+                  <p class="card-text"> <strong>Nombre:</strong> {{dataCheckout.user_name}}
+                  <p class="card-text"> <strong>Email:</strong> {{dataCheckout.user_email}}
+
+                  <div *ngIf="dataCheckout.status == 'PENDIENTE'" class="alert alert-secondary" role="alert">
+                     Revisa tu app nequi y completa el pago
+                  </div>
+                  <div *ngIf="dataCheckout.status == 'EXITOSO'" class="alert alert-success" role="alert">
+                     Se completó el pago
+                  </div>
+                  <div *ngIf="dataCheckout.status == 'RECHAZADO'" class="alert alert-danger" role="alert">
+                     El pago fue rechazado
+                  </div>
+
+               </div>
+
+            </div>
+         </div>
+
+      </div>
+   </div>
+</div>

@@ -1,0 +1,25 @@
+.btn-pay {
+    background-color: #4a2a9a;
+    color: white;
+    border: 1px solid #4a2a9a;
+}
+
+.btn-pay:hover {
+    background-color: white;
+    color: #4a2a9a;
+    border: 1px solid #4a2a9a;
+}
+
+.form-floating .form-control {
+    background-color: white;
+}
+
+.form-floating label {
+    color: #4a2a9a;
+    opacity: 1;
+    font-weight: bold;
+}
+
+.swal2-title {
+    color: red !important;
+}
