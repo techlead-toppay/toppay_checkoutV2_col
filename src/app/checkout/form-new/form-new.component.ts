@@ -156,8 +156,8 @@ export class FormNewComponent implements OnInit, AfterViewInit {
 			else if (infoResponse.data == 'DAVIPLATA') {
 				this.router.navigateByUrl(`/checkout/app/daviplata?token=${this.token}`, { replaceUrl: true });
 			} else {
-				// const url: any = infoResponse.data;
-				// window.location.href = url;
+				const url: any = infoResponse.data;
+				window.location.href = url;
 			}
 
 			this.isLoading = false;
