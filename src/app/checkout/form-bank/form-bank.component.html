@@ -37,13 +37,12 @@
                   <div class="row">
                      <div *ngFor="let item of paymentMethod.list" class="col-6 col-md-4 mt-3 mb-3"
                         style="height: 100px;">
-                        <div (click)="selectPaymentMethods(item)" class="card-bank m-auto h-100 d-flex"
+                        <div *ngIf="item.name != 'EFECTIVO'" (click)="selectPaymentMethods(item)" class="card-bank m-auto h-100 d-flex"
                            [id]="'card-item-' + item.id">
                            <img [src]="'assets/' + item.icons.url"
                               class="card-img-top p-3 mx-auto my-auto img-method-pay-{{item.icons.width}}"
                               alt="metodPago" [style.width.px]="item.icons.width" />
-
-                        </div>
+                           </div>
                      </div>
                   </div>
                </div>
@@ -51,7 +50,7 @@
          </div>
       </div>
    </div>
-   <div *ngIf="!merchantId" class="card shadow text-center">
+   <div *ngIf="!merchantId" class="card shadow text-center mt-3">
       <div class="card-header">
          <b>
             <i *ngIf="paymentMethod.name=='Pago online'" class="pi pi-globe"></i>
@@ -64,6 +63,12 @@
             <div class="row">
                <div *ngFor="let item of paymentMethod.list" class="col-6 col-md-4 mt-3 mb-3" style="height: 100px;">
                   <div *ngIf="item.name !='EFECTIVO' && m_id != merchantId" (click)="selectPaymentMethods(item)"
+                     class="card-bank m-auto h-100 d-flex" [id]="'card-item-' + item.id">
+                     <img [src]="'assets/' + item.icons.url"
+                        class="card-img-top p-3 mx-auto my-auto img-method-pay-{{item.icons.width}}" alt="metodPago"
+                        [style.width.px]="item.icons.width" />
+                  </div>
+                  <div *ngIf="item.name =='EFECTIVO' && efec && m_id != merchantId" (click)="selectPaymentMethods(item)"
                      class="card-bank m-auto h-100 d-flex" [id]="'card-item-' + item.id">
                      <img [src]="'assets/' + item.icons.url"
                         class="card-img-top p-3 mx-auto my-auto img-method-pay-{{item.icons.width}}" alt="metodPago"

@@ -59,7 +59,7 @@ export class FormNewComponent implements OnInit, AfterViewInit {
 	ngOnInit(): void {
 		this.inicial();
 		this.start();
-		this.method = localStorage.getItem('M_S')
+		this.method = localStorage.getItem('M_S');
 	}
 	ngAfterViewInit(): void {
 	}
@@ -164,7 +164,8 @@ export class FormNewComponent implements OnInit, AfterViewInit {
 
 		});
 		pay.catch(() => {
-			alert('Ocurrio un error :(');
+			this.alertService.toastTime()
+			// alert('Ocurrio un error :(');
 			this.isLoading = false;
 		});
 	}
