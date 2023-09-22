@@ -27,7 +27,7 @@ import { FormYapeComponent } from './form-yape/form-yape.component';
 import { TimelineModule } from 'primeng/timeline';
 import { SpeedDialModule } from 'primeng/speeddial';
 import { FormNewComponent } from './form-new/form-new.component';
-
+import { FormEfectivoComponent } from './form-efectivo/form-efectivo.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +51,8 @@ import { FormNewComponent } from './form-new/form-new.component';
     CompletionTransactionComponent,
     FormDaviplataComponent,
     InfoDaviplataComponent,
-    FormYapeComponent
+    FormYapeComponent,
+    FormEfectivoComponent,
   ],
   imports: [
     CommonModule,
@@ -59,6 +60,6 @@ import { FormNewComponent } from './form-new/form-new.component';
     CheckoutRoutingModule,
     TimelineModule,
     SpeedDialModule,
-  ]
+  ],
 })
-export class CheckoutModule { }
+export class CheckoutModule {}

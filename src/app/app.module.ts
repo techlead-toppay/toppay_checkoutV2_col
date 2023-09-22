@@ -9,7 +9,6 @@ import { CheckoutService } from './services/checkout.service';
 import { NotFoundComponent } from './home/not-found/not-found.component';
 import { ErrorPageComponent } from './home/error-page/error-page.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { FormEfectivoComponent } from './checkout/form-efectivo/form-efectivo.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { TimelineModule } from 'primeng/timeline';
 
@@ -19,7 +18,6 @@ import { TimelineModule } from 'primeng/timeline';
     AppComponent,
     NotFoundComponent,
     ErrorPageComponent,
-    FormEfectivoComponent,
   ],
   imports: [
     BrowserModule,
