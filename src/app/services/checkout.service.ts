@@ -235,9 +235,9 @@ export class CheckoutService {
   }
 
   async pay(data: any) {
-    console.log(data,"<-- data")
+    console.log(data, '<-- data');
     return new Promise((resolve, reject) => {
-      this.apiService.request('services/pay',data ).subscribe(
+      this.apiService.request('services/pay', data).subscribe(
         (response) => {
           resolve(response);
         },
@@ -251,25 +251,21 @@ export class CheckoutService {
 
   async createPdf(data: any) {
     return new Promise((resolve, reject) => {
-      this.apiService
-        .requestNode('http://129.80.238.214:3000/api/refacilpdf/create', { ...data })
-        .subscribe(
-          (response) => {
-            resolve(response);
-          },
-          ({ error }: any) => {
-            console.log('Error al pagar', error);
-            reject(error);
-          }
-        );
+      this.apiService.requestNode('toppay/create', { ...data }).subscribe(
+        (response) => {
+          resolve(response);
+        },
+        ({ error }: any) => {
+          console.log('Error al pagar', error);
+          reject(error);
+        }
+      );
     });
   }
   async searchPdf(data: string) {
     return new Promise((resolve, reject) => {
       this.apiService
-        .methodGetNode(
-          'http://129.80.238.214:3000/api/refacilpdf/search?reference=' + data
-        )
+        .methodGetNode('toppay/search?reference=' + data)
         .subscribe(
           (response) => {
             resolve(response);

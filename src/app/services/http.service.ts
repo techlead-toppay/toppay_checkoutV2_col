@@ -4,44 +4,45 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
-	providedIn: 'root'
+  providedIn: 'root',
 })
 export class HttpService {
+  constructor(private http: HttpClient) {}
 
-	constructor(private http: HttpClient) { }
+  api(serviceName: string, data: object): Observable<Object> {
+    const headers = new HttpHeaders();
+    const options = { headers: headers, withCredeintials: false };
 
-	api(serviceName: string, data: object): Observable<Object> {
+    const url = environment.url + serviceName;
+    return this.http.post(url, data, options);
+  }
+  node(serviceName: string, data: object): Observable<Object> {
+    const headers = new HttpHeaders();
+    const options = { headers: headers, withCredeintials: false };
 
-		const headers = new HttpHeaders();
-		const options = { headers: headers, withCredeintials: false };
+    const url = environment.url + serviceName;
+    return this.http.post(url, data, options);
+  }
 
-		const url = environment.url + serviceName;
-		return this.http.post(url, data, options);
+  get() {
+    const headers = new HttpHeaders();
+    const options = { headers: headers, withCredeintials: false };
+    const url = 'https://production.toppaylatam.com/api/transactions/datetime';
 
-	}
-	node(serviceName: string, data: object): Observable<Object> {
+    return this.http.get(url);
+  }
+  getNode(service: string) {
+    const headers = new HttpHeaders();
+    const options = { headers: headers, withCredeintials: false };
+    const url = environment.url + service;
 
-		const headers = new HttpHeaders();
-		const options = { headers: headers, withCredeintials: false };
+    return this.http.get(url, options);
+  }
+  postNode(service: string) {
+    const headers = new HttpHeaders();
+    const options = { headers: headers, withCredeintials: false };
+    const url = environment.url + service;
 
-		const url = serviceName;
-		return this.http.post(url, data, options);
-
-	}
-
-	get() {
-		const headers = new HttpHeaders();
-		const options = { headers: headers, withCredeintials: false };
-		const url = "https://production.toppaylatam.com/api/transactions/datetime";
-
-		return this.http.get(url);
-	}
-	getNode(service: string) {
-		const headers = new HttpHeaders();
-		const options = { headers: headers, withCredeintials: false };
-		const url = service;
-
-		return this.http.get(url);
-	}
-
+    return this.http.post(url, options);
+  }
 }
