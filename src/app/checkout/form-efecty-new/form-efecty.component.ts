@@ -31,7 +31,7 @@ export class FormEfectyNewComponent implements OnInit {
     vads_site_id: '57845002',
     vads_trans_date: '',
     vads_trans_id: '362824',
-    vads_order_id: '',
+    s_order_id: '',
     vads_version: 'V2',
     signature: '',
   };
