@@ -166,9 +166,10 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 						break;
 
 					case 'ACH-EFECTY':
-						this.checkoutService.chageTypeTransaction(this.token, 3, 'TUP_EFECTY');
+						// this.checkoutService.chageTypeTransaction(this.token, 3, 'TUP_EFECTY');
 						localStorage.setItem('step', "3");
-						this.view.createComponent(FormEfectyNewComponent);
+						this.checkoutService.chageTypeTransaction(this.token, 3, 'TUP_GEN');
+						// this.view.createComponent(FormEfectyNewComponent);
 						break;
 
 					case 'EFECTIVO':

@@ -47,23 +47,6 @@ export class FormEfectyNewComponent implements OnInit {
   }
 
   pagar() {
-    const formData = {
-      id: this.checkoutService.dataCheckout.id,
-      user_doc: this.checkoutService.dataCheckout.user_doc,
-    };
-    console.log(this.checkoutService.dataCheckout);
-
-    const pay = this.checkoutService.pay(formData);
-    pay.then((response: any) => {
-      console.log(response);
-      if (response.success) {
-        window.location.href = response.data;
-      } else {
-        alert('NO se completó la operación');
-      }
-    });
-    pay.catch(() => {
-      alert('Ocurrio un error :(');
-    });
+   
   }
 }

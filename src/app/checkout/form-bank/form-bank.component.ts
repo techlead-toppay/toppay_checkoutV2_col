@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { PrimeIcons } from 'primeng/api';
 import { CheckoutService } from 'src/app/services/checkout.service';
 import { LocalStorageService } from 'src/app/services/localstorage.service';
@@ -15,12 +16,19 @@ export class FormBankComponent implements OnInit {
   public typeTra: any;
   public m_id: any;
   public t_t: any;
-  public efec: boolean = false;
+  public efec: boolean = true;
+  public token: string = '';
+  public loading: boolean = false;
 
   constructor(
     public checkoutService: CheckoutService,
-    public localStorageService: LocalStorageService
-  ) {}
+    public localStorageService: LocalStorageService,
+    private route: ActivatedRoute
+  ) {
+    this.route.queryParams.subscribe(
+      (params) => (this.token = params['token'])
+    );
+  }
 
   ngOnInit(): void {
     this.m_id = this.localStorageService.get('M_id');
@@ -59,8 +67,35 @@ export class FormBankComponent implements OnInit {
     const card = document.querySelector<any>(`#card-item-${item.id}`);
     card.classList.add('animate__animated');
     card.classList.add('animate__zoomOut');
-    setTimeout(() => {
-      this.checkoutService.selectedPaymentMethodSubject.next(item);
-    }, 500);
+    const formData = {
+      id: this.checkoutService.dataCheckout.id,
+      user_doc: this.checkoutService.dataCheckout.user_doc,
+      bank: 0,
+    };
+    if (item.name == 'ACH-EFECTY') {
+      this.loading = true;
+      this.checkoutService.chageTypeTransaction(this.token, 3, 'TUP_EFECTY');
+      setTimeout(() => {
+        const pay = this.checkoutService.pay(formData);
+        pay.then((response: any) => {
+          console.log(response);
+          if (response.success) {
+            setTimeout(() => {
+              window.location.href = response.data;
+            }, 500);
+          } else {
+            alert('NO se completó la operación');
+          }
+        });
+        pay.catch(() => {
+          alert('Ocurrio un error :(');
+        });
+      }, 1000);
+    } else {
+      setTimeout(() => {
+        this.checkoutService.selectedPaymentMethodSubject.next(item);
+      }, 500);
+    }
+    console.log(item.name);
   }
 }

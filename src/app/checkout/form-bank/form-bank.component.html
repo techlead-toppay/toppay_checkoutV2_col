@@ -1,3 +1,4 @@
+<app-loading-main *ngIf="loading"></app-loading-main>
 <div *ngFor="let paymentMethod of paymentMethods">
    <div *ngIf="merchantId">
       <div *ngIf="paymentMethod.name =='Pago online' && typeTra =='1' ">
