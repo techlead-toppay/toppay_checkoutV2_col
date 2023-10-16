@@ -81,13 +81,21 @@ export class FormBankComponent implements OnInit {
           console.log(response);
           if (response.success) {
             setTimeout(() => {
+              
               window.location.href = response.data;
             }, 500);
+            setTimeout(() => {
+              card.classList.remove('animate__zoomOut');
+              card.classList.add('animate__zoomIn');
+              this.loading = false;
+            }, 1500);
           } else {
+            this.loading = false;
             alert('NO se completó la operación');
           }
         });
         pay.catch(() => {
+          this.loading = false;
           alert('Ocurrio un error :(');
         });
       }, 1000);
