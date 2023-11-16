@@ -77,6 +77,7 @@ export class FormPseComponent implements OnInit, AfterViewInit {
 	}
 
 	fillData() {
+		
 		document.querySelector<any>('#user_name').value = this.dataCheckout.user_name;
 		document.querySelector<any>('#user_doc').value = this.dataCheckout.user_doc;
 		document.querySelector<any>('#user_phone').value = this.dataCheckout.user_phone;

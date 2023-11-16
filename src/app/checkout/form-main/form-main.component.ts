@@ -113,7 +113,8 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 					this.checkoutService.selectedView.next('ACH-YAPE');
 				} else if (updateData.method == 'TUP_EFECTIVO') {
 					this.checkoutService.selectedView.next('EFECTIVO');
-				} else {
+				} else 
+				 {
 					this.checkoutService.selectedView.next('main');
 				}
 			}
@@ -139,25 +140,56 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 						break;
 
 					case 'ACH-PSE':
-						this.view.createComponent(FormNewComponent);
-						localStorage.setItem('step', "2");
-						localStorage.setItem('M_S', "TUP_PSE");
-						this.checkoutService.chageTypeTransaction(this.token, 1, 'TUP_PSE');
-						break;
+
+				  if(this.dataCheckout.merchant_id=='3'){
+					this.view.createComponent(FormBankComponent);
+					localStorage.setItem('step', "1");
+					localStorage.setItem('M_S', "TUP_GEN");
+					this.checkoutService.chageTypeTransaction(this.token, 1, 'TUP_GEN');
+					break;
+				  }else{
+					this.view.createComponent(FormNewComponent);
+					localStorage.setItem('step', "2");
+					localStorage.setItem('M_S', "TUP_PSE");
+					this.checkoutService.chageTypeTransaction(this.token, 1, 'TUP_PSE');
+					break;
+				  }
+
+					
 
 					case 'NEQUI':
+
+				if(this.dataCheckout.merchant_id=='3'){
+						this.view.createComponent(FormBankComponent);
+					localStorage.setItem('step', "1");
+					localStorage.setItem('M_S', "TUP_GEN");
+					this.checkoutService.chageTypeTransaction(this.token, 1, 'TUP_GEN');
+					break;	
+					}else{ 
 						this.view.createComponent(FormNewComponent);
 						localStorage.setItem('step', "2");
 						localStorage.setItem('M_S', "TUP_NEQUI");
 						this.checkoutService.chageTypeTransaction(this.token, 1, 'TUP_NEQUI');
 						break;
+					 } 
+						
 
 					case 'DAVIPLATA':
-						this.view.createComponent(FormNewComponent);
-						localStorage.setItem('M_S', "TUP_DAVIPLATA");
-						localStorage.setItem('step', "2");
-						this.checkoutService.chageTypeTransaction(this.token, 1, 'TUP_DAVIPLATA');
-						break;
+						if(this.dataCheckout.merchant_id=='3'){
+							this.view.createComponent(FormBankComponent);
+							localStorage.setItem('step', "1");
+							localStorage.setItem('M_S', "TUP_GEN");
+							this.checkoutService.chageTypeTransaction(this.token, 1, 'TUP_GEN');
+							break;	
+						}else{
+							this.view.createComponent(FormNewComponent);
+							localStorage.setItem('M_S', "TUP_DAVIPLATA");
+							localStorage.setItem('step', "2");
+							this.checkoutService.chageTypeTransaction(this.token, 1, 'TUP_DAVIPLATA');
+							break;
+						}
+
+					
 
 					case 'BANCOLOMBIA':
 						this.view.createComponent(FormBancolombiaComponent);
@@ -179,10 +211,12 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 						this.view.createComponent(FormEfectivoComponent);
 						break;
 
-					case 'YAPE':
+						case 'YAPE':
 						this.view.createComponent(FormYapeComponent);
 						this.checkoutService.chageTypeTransaction(this.token, 1, 'TUP_YAPE');
 						break;
+
+					
 
 					case 'CashOut':
 						this.view.createComponent(FormCashoutComponent);
