@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 
 import { PaymentMethod, ItemPayment, Transaction } from '../types';
 import { ApiService } from './api.service';
+import { LocalStorageService } from 'src/app/services/localstorage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -21,9 +22,13 @@ export class CheckoutService {
   public selectedPaymentMethodSubject = new Subject<PaymentMethod>();
   public selectedView = new Subject<string>();
   public infoprueba!: Transaction;
-  constructor(private router: Router, private apiService: ApiService) {}
 
+  constructor(private router: Router, private apiService: ApiService,public localStorageService: LocalStorageService,) {}
+
+  /* ***********************ESTE LO ESTA UTILIZANDO COBRE******************** */
   async getPaymentMethods() {
+    let m_id = this.localStorageService.get('M_id');
+    
     const paymentMethods: Array<ItemPayment> = [
       {
         name: 'Pago online',
@@ -42,8 +47,8 @@ export class CheckoutService {
             name: 'NEQUI',
             type: 'LINK',
             icons: {
-              url: 'nequi2.png',
-              width: 80,
+              url: 'nequi.svg',
+              width: 150,
             },
           },
           {
@@ -53,6 +58,60 @@ export class CheckoutService {
             icons: {
               url: 'daviplata.png',
               width: 140,
+            },
+          },
+          {
+            id: 13,
+            name: 'BANCOLOMBIA',
+            type: 'LINK',
+            icons: {
+              url: 'bancolombia.svg',
+              width: 220,
+            },
+          },
+          {
+            id: 14,
+            name: 'DAVIVIENDA',
+            type: 'LINK',
+            icons: {
+              url: 'davivienda.png',
+              width: 220,
+            },
+          },
+          {
+            id: 15,
+            name: 'AVVILLAS',
+            type: 'LINK',
+            icons: {
+              url: 'avvillas.svg',
+              width: 220,
+            },
+          },
+          {
+            id: 16,
+            name: 'BANCOBOGOTA',
+            type: 'LINK',
+            icons: {
+              url: 'bancobogota.svg',
+              width: 220,
+            },
+          },
+          {
+            id: 17,
+            name: 'COLPATRIA',
+            type: 'LINK',
+            icons: {
+              url: 'colpatria.svg',
+              width: 220,
+            },
+          },
+          {
+            id: 18,
+            name: 'OCCIDENTE',
+            type: 'LINK',
+            icons: {
+              url: 'occidente.svg',
+              width: 220,
             },
           },
         ],
@@ -74,7 +133,7 @@ export class CheckoutService {
             name: 'EFECTIVO',
             type: 'LINK',
             icons: {
-              url: 'bancolombia.png',
+              url: 'bancolombia.svg',
               width: 220,
             },
           },
@@ -117,6 +176,15 @@ export class CheckoutService {
         ],
       },
     ];
+
+    if(!(m_id == '29' || m_id == '3')){
+      let arrIds = [13,14,15,16,17,18];
+  
+      arrIds.forEach((e:any) => {
+            paymentMethods[0].list = paymentMethods[0].list.filter(objeto => objeto.id !== e);
+      });
+    }
+
     this.paymentMethodsSubject.next(paymentMethods);
   }
 
@@ -130,7 +198,7 @@ export class CheckoutService {
             name: 'Botón de Pago Bancolombia',
             type: 'LINK',
             icons: {
-              url: 'bancolombia.png',
+              url: 'bancolombia.svg',
               width: 150,
             },
           },

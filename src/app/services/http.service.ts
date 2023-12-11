@@ -14,6 +14,7 @@ export class HttpService {
     const options = { headers: headers, withCredeintials: false };
 
     const url = environment.url + serviceName;
+    
     return this.http.post(url, data, options);
   }
   node(serviceName: string, data: object): Observable<Object> {

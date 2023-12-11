@@ -17,6 +17,8 @@ import { FormYapeComponent } from '../form-yape/form-yape.component';
 import { FormEfectivoComponent } from '../form-efectivo/form-efectivo.component';
 import { FormNewComponent } from '../form-new/form-new.component';
 import { LocalStorageService } from 'src/app/services/localstorage.service';
+import { ApiService } from '../form-bank/api.service';
+import { AlertService } from '../../services/alert.service';
 
 const Storage = localStorage;
 @Component({
@@ -27,6 +29,8 @@ const Storage = localStorage;
 export class FormMainComponent implements OnInit, AfterViewInit {
 
 	public step: any = Storage.getItem('step');
+	public m_id:any = this.localStorageService.get('M_id');
+	
 	events1: any[] = [];
 	public token: string = '';
 	public dataCheckout: Transaction = {
@@ -50,11 +54,14 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 		method: ''
 	};
 	public intervalID: any;
+	
 
 	constructor(
 		public localStorageService: LocalStorageService,
 		public checkoutService: CheckoutService,
-		private route: ActivatedRoute
+		private route: ActivatedRoute,
+		private http:ApiService,
+		private alertService:AlertService
 	) {
 		this.route.queryParams.subscribe(params => this.token = params['token']);
 	}
@@ -62,6 +69,8 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 	@ViewChild('containerData', { read: ViewContainerRef }) view!: ViewContainerRef;
 
 	ngOnInit(): void {
+		
+		
 		this.start();
 		this.events1 = [
 			{
@@ -100,7 +109,29 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 				this.checkoutService.selectedView.next('CashOut');
 			} else {
 				if (updateData.method == 'TUP_PSE') {
-					this.checkoutService.selectedView.next('ACH-PSE');
+
+					if(this.m_id == 29 || this.m_id == 3){
+						 this.http.viewCobre({bank:"",token:this.
+						token}).subscribe( (res:any) => {
+							
+							
+							if(res.error){
+							  this.alertService.toastMessage("Datos incompletos")
+							}else{
+								console.log( res.url )
+								window.location.href = res.url;
+							}
+						  },
+						  (err: any)=>{
+							console.log(err);
+							const {error} = err;
+							const {message} = error;
+							this.alertService.toastMessage(message);
+						});
+
+					}else{
+						this.checkoutService.selectedView.next('ACH-PSE');
+					}
 				} else if (updateData.method == 'TUP_NEQUI') {
 					this.checkoutService.selectedView.next('NEQUI');
 				} else if (updateData.method == 'TUP_DAVIPLATA') {
@@ -166,11 +197,11 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 						break;
 
 					case 'ACH-EFECTY':
-						// this.checkoutService.chageTypeTransaction(this.token, 3, 'TUP_EFECTY');
+						this.checkoutService.chageTypeTransaction(this.token, 3, 'TUP_EFECTY');
 						localStorage.setItem('step', "3");
-						this.view.createComponent(FormBankComponent);
-						this.checkoutService.chageTypeTransaction(this.token, 1, 'TUP_GEN');
-						// this.view.createComponent(FormEfectyNewComponent);
+						this.view.createComponent(FormEfectyNewComponent);
+						// this.view.createComponent(FormBankComponent);
+						// this.checkoutService.chageTypeTransaction(this.token, 1, 'TUP_GEN');
 						break;
 
 					case 'EFECTIVO':
