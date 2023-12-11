@@ -177,7 +177,7 @@ export class CheckoutService {
       },
     ];
 
-    if(!(m_id == '29' || m_id == '3')){
+    if(!(m_id == '29' || m_id == '3' || m_id == '54')){
       let arrIds = [13,14,15,16,17,18];
   
       arrIds.forEach((e:any) => {

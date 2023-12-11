@@ -110,7 +110,7 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 			} else {
 				if (updateData.method == 'TUP_PSE') {
 
-					if(this.m_id == 29 || this.m_id == 3){
+					if(this.m_id == 29 || this.m_id == 3 || this.m_id == 54){
 						 this.http.viewCobre({bank:"",token:this.
 						token}).subscribe( (res:any) => {
 							
@@ -199,7 +199,7 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 					case 'ACH-EFECTY':
 						this.checkoutService.chageTypeTransaction(this.token, 3, 'TUP_EFECTY');
 						localStorage.setItem('step', "3");
-						this.view.createComponent(FormEfectyNewComponent);
+						this.view.createComponent(FormEfectyComponent);
 						// this.view.createComponent(FormBankComponent);
 						// this.checkoutService.chageTypeTransaction(this.token, 1, 'TUP_GEN');
 						break;
