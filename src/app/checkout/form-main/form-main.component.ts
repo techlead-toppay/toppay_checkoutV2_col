@@ -110,7 +110,7 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 			} else {
 				if (updateData.method == 'TUP_PSE') {
 
-					if(this.m_id == 29 || this.m_id == 3 || this.m_id == 54 || this.m_id == 105){
+					if(this.m_id == 29 || this.m_id == 3 || this.m_id == 42 ||  this.m_id == 54 || this.m_id == 105 || this.m_id == 34){
 						 this.http.viewCobre({bank:"",token:this.
 						token}).subscribe( (res:any) => {
 							if(res.error){

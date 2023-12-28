@@ -79,7 +79,7 @@ export class FormBankComponent implements OnInit {
       bank: 0,
     };
 
-    if (item.id == 8 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 54 || this.m_id == 105)) {
+    if (item.id == 8 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 42 || this.m_id == 54 || this.m_id == 105 || this.m_id == 34)) {
       /* PSE */
       this.loading = true;
 
@@ -102,7 +102,7 @@ export class FormBankComponent implements OnInit {
           this.alertService.toastMessage(message);
         });
 
-    } else if (item.id == 11 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 54 || this.m_id == 105)) {
+    } else if (item.id == 11 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 42 || this.m_id == 54 || this.m_id == 105 || this.m_id == 34)) {
       /* DAVIPLATA */
       this.loading = true;
 
@@ -125,7 +125,7 @@ export class FormBankComponent implements OnInit {
           this.alertService.toastMessage(message);
         });
 
-    } else if (item.id == 10 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 54 || this.m_id == 105)) {
+    } else if (item.id == 10 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 42 || this.m_id == 54 || this.m_id == 105 || this.m_id == 34)) {
       /* NEQUI */
       this.loading = true;
 
@@ -150,7 +150,7 @@ export class FormBankComponent implements OnInit {
           this.alertService.toastMessage(message);
         });
 
-    } else if (item.id == 13 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 54 || this.m_id == 105)) {
+    } else if (item.id == 13 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 42 || this.m_id == 54 || this.m_id == 105 || this.m_id == 34)) {
       /* BANCOLOMBIA */
       this.loading = true;
 
@@ -174,7 +174,7 @@ export class FormBankComponent implements OnInit {
           this.alertService.toastMessage(message);
         });
 
-    } else if (item.id == 14 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 54 || this.m_id == 105)) {
+    } else if (item.id == 14 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 42 || this.m_id == 54 || this.m_id == 105 || this.m_id == 34)) {
       /* DAVIVIENDA */
       this.loading = true;
 
@@ -198,7 +198,7 @@ export class FormBankComponent implements OnInit {
           this.alertService.toastMessage(message);
         });
 
-    } else if (item.id == 15 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 54 || this.m_id == 105)) {
+    } else if (item.id == 15 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 42 || this.m_id == 54 || this.m_id == 105 || this.m_id == 34)) {
       /* AVVILLAS */
       this.loading = true;
 
@@ -222,7 +222,7 @@ export class FormBankComponent implements OnInit {
           this.alertService.toastMessage(message);
         });
 
-    } else if (item.id == 16 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 54 || this.m_id == 105)) {
+    } else if (item.id == 16 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 42 || this.m_id == 54 || this.m_id == 105 || this.m_id == 34)) {
       /* BANCOBOGOTA */
       this.loading = true;
 
@@ -246,7 +246,7 @@ export class FormBankComponent implements OnInit {
           this.alertService.toastMessage(message);
         });
 
-    } else if (item.id == 17 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 54 || this.m_id == 105)) {
+    } else if (item.id == 17 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 42 || this.m_id == 54 || this.m_id == 105 || this.m_id == 34)) {
       /* COLPATRIA */
       this.loading = true;
 
@@ -270,7 +270,7 @@ export class FormBankComponent implements OnInit {
           this.alertService.toastMessage(message);
         });
 
-    } else if (item.id == 18 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 54 || this.m_id == 105)) {
+    } else if (item.id == 18 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 42 || this.m_id == 54 || this.m_id == 105 || this.m_id == 34)) {
       /* OCCIDENTE */
       this.loading = true;
 
