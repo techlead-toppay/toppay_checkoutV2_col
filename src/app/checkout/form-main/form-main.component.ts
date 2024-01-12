@@ -111,17 +111,16 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 				if (updateData.method == 'TUP_PSE') {
 
 					if(this.m_id == 29 || this.m_id == 3 || this.m_id == 42 ||  this.m_id == 54 || this.m_id == 105 ){
-						 this.http.viewCobre({bank:"",token:this.
-						token}).subscribe( (res:any) => {
+						 this.http.viewCobre({bank:"",token:this.token}).subscribe( (res:any) => {
 							if(res.error){
 							  this.alertService.toastMessage("Datos incompletos")
 							}else{
-								console.log( res.url )
+								/* console.log( res.url ) */
 								window.location.href = res.url;
 							}
 						  },
 						  (err: any)=>{
-							console.log(err);
+							
 							const {error} = err;
 							const {message} = error;
 							this.alertService.toastMessage(message);
@@ -131,7 +130,26 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 						this.checkoutService.selectedView.next('ACH-PSE');
 					}
 				} else if (updateData.method == 'TUP_NEQUI') {
-					this.checkoutService.selectedView.next('NEQUI');
+
+					if(this.m_id == 29 || this.m_id == 3 || this.m_id == 42 ||  this.m_id == 54 || this.m_id == 105 ){
+
+						this.http.viewCobre({bank:"1507",token:this.token}).subscribe( (res:any) => {
+							if(res.error){
+							  this.alertService.toastMessage("Datos incompletos")
+							}else{
+								/* console.log( res.url ) */
+								window.location.href = res.url;
+							}
+						  },
+						  (err: any)=>{
+							
+							const {error} = err;
+							const {message} = error;
+							this.alertService.toastMessage(message);
+						});
+					}else{
+						this.checkoutService.selectedView.next('NEQUI');
+					}
 				} else if (updateData.method == 'TUP_DAVIPLATA') {
 					this.checkoutService.selectedView.next('DAVIPLATA');
 				} else if (updateData.method == 'TUP_BANCOLOMBIA') {

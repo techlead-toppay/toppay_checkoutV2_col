@@ -81,13 +81,14 @@ export class FormBankComponent implements OnInit {
 
     if (item.id == 8 && (this.m_id == 29 || this.m_id == 3 || this.m_id == 42 || this.m_id == 54 || this.m_id == 105 )) {
       /* PSE */
+     
       this.loading = true;
 
       await this.http.viewCobre({ bank: "", token: this.token }).subscribe((res: any) => {
-
+        
         if (res.error) {
           this.loading = false;
-          this.alertService.toastMessage("Datos incompletos")
+          this.alertService.toastMessage(res.message)
         } else {
           setTimeout(() => {
             window.location.href = res.url;
@@ -95,7 +96,6 @@ export class FormBankComponent implements OnInit {
         }
       },
         (err: any) => {
-          console.log(err);
           const { error } = err;
           const { message } = error;
           this.loading = false;
@@ -110,7 +110,7 @@ export class FormBankComponent implements OnInit {
 
         if (res.error) {
           this.loading = false;
-          this.alertService.toastMessage("Datos incompletos")
+          this.alertService.toastMessage(res.message)
         } else {
           setTimeout(() => {
             window.location.href = res.url;
@@ -118,7 +118,6 @@ export class FormBankComponent implements OnInit {
         }
       },
         (err: any) => {
-          console.log(err);
           const { error } = err;
           const { message } = error;
           this.loading = false;
@@ -133,7 +132,7 @@ export class FormBankComponent implements OnInit {
 
         if (res.error) {
           this.loading = false;
-          this.alertService.toastMessage("Datos incompletos")
+          this.alertService.toastMessage(res.message)
         } else {
           setTimeout(() => {
             window.location.href = res.url;
@@ -143,7 +142,6 @@ export class FormBankComponent implements OnInit {
 
       },
         (err: any) => {
-          console.log(err);
           const { error } = err;
           const { message } = error;
           this.loading = false;
@@ -158,7 +156,7 @@ export class FormBankComponent implements OnInit {
 
         if (res.error) {
           this.loading = false;
-          this.alertService.toastMessage("Datos incompletos")
+          this.alertService.toastMessage(res.message)
         } else {
           setTimeout(() => {
             window.location.href = res.url;
@@ -167,7 +165,6 @@ export class FormBankComponent implements OnInit {
 
       },
         (err: any) => {
-          console.log(err);
           const { error } = err;
           const { message } = error;
           this.loading = false;
@@ -182,7 +179,7 @@ export class FormBankComponent implements OnInit {
 
         if (res.error) {
           this.loading = false;
-          this.alertService.toastMessage("Datos incompletos")
+          this.alertService.toastMessage(res.message)
         } else {
           setTimeout(() => {
             window.location.href = res.url;
@@ -191,7 +188,6 @@ export class FormBankComponent implements OnInit {
 
       },
         (err: any) => {
-          console.log(err);
           const { error } = err;
           const { message } = error;
           this.loading = false;
@@ -206,7 +202,7 @@ export class FormBankComponent implements OnInit {
 
         if (res.error) {
           this.loading = false;
-          this.alertService.toastMessage("Datos incompletos")
+          this.alertService.toastMessage(res.message)
         } else {
           setTimeout(() => {
             window.location.href = res.url;
@@ -215,7 +211,6 @@ export class FormBankComponent implements OnInit {
 
       },
         (err: any) => {
-          console.log(err);
           const { error } = err;
           const { message } = error;
           this.loading = false;
@@ -229,7 +224,7 @@ export class FormBankComponent implements OnInit {
       await this.http.viewCobre({ bank: "1001", token: this.token }).subscribe((res: any) => {
 
         if (res.error) {
-          this.alertService.toastMessage("Datos incompletos")
+          this.alertService.toastMessage(res.message)
           this.loading = false;
         } else {
           setTimeout(() => {
@@ -239,7 +234,6 @@ export class FormBankComponent implements OnInit {
 
       },
         (err: any) => {
-          console.log(err);
           const { error } = err;
           const { message } = error;
           this.loading = false;
@@ -254,7 +248,7 @@ export class FormBankComponent implements OnInit {
 
         if (res.error) {
           this.loading = false;
-          this.alertService.toastMessage("Datos incompletos")
+          this.alertService.toastMessage(res.message)
         } else {
           setTimeout(() => {
             window.location.href = res.url;
@@ -263,7 +257,6 @@ export class FormBankComponent implements OnInit {
 
       },
         (err: any) => {
-          console.log(err);
           const { error } = err;
           const { message } = error;
           this.loading = false;
@@ -277,7 +270,7 @@ export class FormBankComponent implements OnInit {
       await this.http.viewCobre({ bank: "1023", token: this.token }).subscribe((res: any) => {
 
         if (res.error) {
-          this.alertService.toastMessage("Datos incompletos")
+          this.alertService.toastMessage(res.message)
           this.loading = false;
         } else {
           setTimeout(() => {
@@ -287,7 +280,6 @@ export class FormBankComponent implements OnInit {
 
       },
         (err: any) => {
-          console.log(err);
           const { error } = err;
           const { message } = error;
           this.loading = false;

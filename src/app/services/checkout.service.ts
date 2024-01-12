@@ -127,52 +127,7 @@ export class CheckoutService {
               url: 'efecty.png',
               width: 140,
             },
-          },
-          {
-            id: 103,
-            name: 'EFECTIVO',
-            type: 'LINK',
-            icons: {
-              url: 'bancolombia.svg',
-              width: 220,
-            },
-          },
-          {
-            id: 104,
-            name: 'EFECTIVO',
-            type: 'LINK',
-            icons: {
-              url: 'bancobogota.png',
-              width: 220,
-            },
-          },
-          {
-            id: 105,
-            name: 'EFECTIVO',
-            type: 'LINK',
-            icons: {
-              url: 'apostar.png',
-              width: 140,
-            },
-          },
-          {
-            id: 106,
-            name: 'EFECTIVO',
-            type: 'LINK',
-            icons: {
-              url: 'davivienda.png',
-              width: 220,
-            },
-          },
-          {
-            id: 107,
-            name: 'EFECTIVO',
-            type: 'LINK',
-            icons: {
-              url: 'susuerte.png',
-              width: 160,
-            },
-          },
+          }
         ],
       },
     ];
@@ -346,3 +301,53 @@ export class CheckoutService {
     });
   }
 }
+
+/* 
+PAGOS EN EFECTIVO
+,
+          {
+            id: 103,
+            name: 'EFECTIVO',
+            type: 'LINK',
+            icons: {
+              url: 'bancolombia.svg',
+              width: 220,
+            },
+          },
+          {
+            id: 104,
+            name: 'EFECTIVO',
+            type: 'LINK',
+            icons: {
+              url: 'bancobogota.png',
+              width: 220,
+            },
+          },
+          {
+            id: 105,
+            name: 'EFECTIVO',
+            type: 'LINK',
+            icons: {
+              url: 'apostar.png',
+              width: 140,
+            },
+          },
+          {
+            id: 106,
+            name: 'EFECTIVO',
+            type: 'LINK',
+            icons: {
+              url: 'davivienda.png',
+              width: 220,
+            },
+          },
+          {
+            id: 107,
+            name: 'EFECTIVO',
+            type: 'LINK',
+            icons: {
+              url: 'susuerte.png',
+              width: 160,
+            },
+          },
+*/
