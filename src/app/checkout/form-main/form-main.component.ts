@@ -110,10 +110,11 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 			} else {
 				if (updateData.method == 'TUP_PSE') {
 
-					if(this.m_id == 29 || this.m_id == 3 || this.m_id == 42 ||  this.m_id == 54 || this.m_id == 105 ){
+					/* if(this.m_id == 29 || this.m_id == 3 || this.m_id == 42 ||  this.m_id == 54 || this.m_id == 105 || this.m_id == 115  ){ */
+					if(this.m_id != '0'  ){
 						 this.http.viewCobre({bank:"",token:this.token}).subscribe( (res:any) => {
 							if(res.error){
-							  this.alertService.toastMessage("Datos incompletos")
+								this.alertService.toastMessage(res.message)
 							}else{
 								/* console.log( res.url ) */
 								window.location.href = res.url;
@@ -131,11 +132,11 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 					}
 				} else if (updateData.method == 'TUP_NEQUI') {
 
-					if(this.m_id == 29 || this.m_id == 3 || this.m_id == 42 ||  this.m_id == 54 || this.m_id == 105 ){
+					if(this.m_id != '0'  ){
 
 						this.http.viewCobre({bank:"1507",token:this.token}).subscribe( (res:any) => {
 							if(res.error){
-							  this.alertService.toastMessage("Datos incompletos")
+								this.alertService.toastMessage(res.message)
 							}else{
 								/* console.log( res.url ) */
 								window.location.href = res.url;
