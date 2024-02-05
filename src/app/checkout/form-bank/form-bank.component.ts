@@ -79,30 +79,32 @@ export class FormBankComponent implements OnInit {
       bank: 0,
     };
 
-    if (item.id == 8 && (this.m_id != '0'  )) {
+    if (item.id == 8 && ( this.m_id != '42' && this.m_id != '99' && this.m_id != '7' && this.m_id != '34'   )) {
       /* PSE */
      
       this.loading = true;
 
       await this.http.viewCobre({ bank: "", token: this.token }).subscribe((res: any) => {
         
-        if (res.error) {
+        console.log(res)
+        /* if (res.error) {
           this.loading = false;
           this.alertService.toastMessage(res.message)
         } else {
           setTimeout(() => {
             window.location.href = res.url;
           }, 500);
-        }
+        } */
       },
         (err: any) => {
+          console.log(err)
           const { error } = err;
           const { message } = error;
           this.loading = false;
           this.alertService.toastMessage(message);
         });
 
-    } else if (item.id == 11 && (this.m_id != '0'  )) {
+    } else if (item.id == 11 && ( this.m_id != '42' && this.m_id != '99' && this.m_id != '7' && this.m_id != '34'   )) {
       /* DAVIPLATA */
       this.loading = true;
 
@@ -124,7 +126,7 @@ export class FormBankComponent implements OnInit {
           this.alertService.toastMessage(message);
         });
 
-    } else if (item.id == 10 && (this.m_id != '0'  )) {
+    } else if (item.id == 10 && ( this.m_id != '42' && this.m_id != '99' && this.m_id != '7' && this.m_id != '34'   )) {
       /* NEQUI */
       this.loading = true;
 
@@ -148,7 +150,7 @@ export class FormBankComponent implements OnInit {
           this.alertService.toastMessage(message);
         });
 
-    } else if (item.id == 13 && (this.m_id != '0'  )) {
+    } else if (item.id == 13 && ( this.m_id != '42' && this.m_id != '99' && this.m_id != '7' && this.m_id != '34'   )) {
       /* BANCOLOMBIA */
       this.loading = true;
 
@@ -171,7 +173,7 @@ export class FormBankComponent implements OnInit {
           this.alertService.toastMessage(message);
         });
 
-    } else if (item.id == 14 && (this.m_id != '0' )) {
+    } else if (item.id == 14 && ( this.m_id != '42' && this.m_id != '99' && this.m_id != '7' && this.m_id != '34'  )) {
       /* DAVIVIENDA */
       this.loading = true;
 
@@ -194,7 +196,7 @@ export class FormBankComponent implements OnInit {
           this.alertService.toastMessage(message);
         });
 
-    } else if (item.id == 15 && (this.m_id != '0' )) {
+    } else if (item.id == 15 && ( this.m_id != '42' && this.m_id != '99' && this.m_id != '7' && this.m_id != '34'  )) {
       /* AVVILLAS */
       this.loading = true;
 
@@ -217,7 +219,7 @@ export class FormBankComponent implements OnInit {
           this.alertService.toastMessage(message);
         });
 
-    } else if (item.id == 16 && (this.m_id != '0' )) {
+    } else if (item.id == 16 && ( this.m_id != '42' && this.m_id != '99' && this.m_id != '7' && this.m_id != '34'  )) {
       /* BANCOBOGOTA */
       this.loading = true;
 
@@ -240,7 +242,7 @@ export class FormBankComponent implements OnInit {
           this.alertService.toastMessage(message);
         });
 
-    } else if (item.id == 17 && (this.m_id != '0' )) {
+    } else if (item.id == 17 && ( this.m_id != '42' && this.m_id != '99' && this.m_id != '7' && this.m_id != '34'  )) {
       /* COLPATRIA */
       this.loading = true;
 
@@ -263,7 +265,7 @@ export class FormBankComponent implements OnInit {
           this.alertService.toastMessage(message);
         });
 
-    } else if (item.id == 18 && (this.m_id != '0' )) {
+    } else if (item.id == 18 && ( this.m_id != '42' && this.m_id != '99' && this.m_id != '7' && this.m_id != '34'  )) {
       /* OCCIDENTE */
       this.loading = true;
 
