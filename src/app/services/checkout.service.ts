@@ -132,7 +132,7 @@ export class CheckoutService {
       },
     ];
 
-    if(!(m_id != '42' && m_id != '99' && m_id != '7' && m_id != '34')){
+    if(!(m_id != '42' && m_id != '99' && m_id != '7' && m_id != '34' && m_id != '95')){
       let arrIds = [13,14,15,16,17,18];
   
       arrIds.forEach((e:any) => {
