@@ -116,7 +116,6 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 							if(res.error){
 								this.alertService.toastMessage(res.message)
 							}else{
-								/* console.log( res.url ) */
 								window.location.href = res.url;
 							}
 						  },
@@ -138,7 +137,7 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 							if(res.error){
 								this.alertService.toastMessage(res.message)
 							}else{
-								/* console.log( res.url ) */
+								
 								window.location.href = res.url;
 							}
 						  },

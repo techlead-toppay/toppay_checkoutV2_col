@@ -86,11 +86,11 @@ export class FormBankComponent implements OnInit {
 
       await this.http.viewCobre({ bank: "", token: this.token }).subscribe((res: any) => {
         
-        console.log(res)
         if (res.error) {
           this.loading = false;
           this.alertService.toastMessage(res.message)
         } else {
+          console.log(res)
           setTimeout(() => {
             window.location.href = res.url;
           }, 500);
