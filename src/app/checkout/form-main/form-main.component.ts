@@ -111,7 +111,7 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 				if (updateData.method == 'TUP_PSE') {
 
 					/* if(this.m_id == 29 || this.m_id == 3 || this.m_id == 42 ||  this.m_id == 54 || this.m_id == 105 || this.m_id == 115  ){ */
-					if( this.m_id != '42' && this.m_id != '99' && this.m_id != '7' && this.m_id != '95' && this.m_id != '105' && this.m_id != '102'  && this.m_id != '34'){
+					if( this.m_id != '42' && this.m_id != '99' && this.m_id != '7' && this.m_id != '95' && this.m_id != '105' && this.m_id != '102'  && this.m_id != '34' && this.m_id != '77'){
 						 this.http.viewCobre({bank:"",token:this.token}).subscribe( (res:any) => {
 							if(res.error){
 								this.alertService.toastMessage(res.message)
@@ -131,7 +131,7 @@ export class FormMainComponent implements OnInit, AfterViewInit {
 					}
 				} else if (updateData.method == 'TUP_NEQUI') {
 
-					if(this.m_id != '42' && this.m_id != '99' && this.m_id != '7' && this.m_id != '95' && this.m_id != '105' && this.m_id != '102'  && this.m_id != '34'){
+					if(this.m_id != '42' && this.m_id != '99' && this.m_id != '7' && this.m_id != '95' && this.m_id != '105' && this.m_id != '102'  && this.m_id != '34' && this.m_id != '77'){
 
 						this.http.viewCobre({bank:"1507",token:this.token}).subscribe( (res:any) => {
 							if(res.error){
